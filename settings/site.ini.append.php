@@ -1,6 +1,0 @@
-<?php /*
-
-[RoleSettings]
-PolicyOmitList[]=stamppdf
- 
-*/ ?>
