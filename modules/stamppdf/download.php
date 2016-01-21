@@ -22,7 +22,7 @@ $pdf = $fileAttr->attribute('filepath');
 
 $currentUser = eZUser::currentUser();
 $currentUserObj = $currentUser->attribute('contentobject');
-$label = "Downloaded by " .$currentUserObj->attribute('name') . ' on ' . date('n/j/Y');
+$label = "Downloaded by " . htmlspecialchars($currentUserObj->attribute('name'), ENT_QUOTES) . ' on ' . date('n/j/Y');
 $filename = $currentUser->attribute('contentobject_id') . '_' . time() . '.pdf';
 $stamp = eZSys::varDirectory() . DIRECTORY_SEPARATOR . 'cache/stamp_' . $filename;
 

@@ -21,7 +21,7 @@ if (count($errors) == 0 and $http->hasPostVariable('pdf_string'))
 {
     $pdf = 'extension/stamppdf/design/standard/images/MugoCollaborationWorkflowProductSheet.pdf';
 
-    $label = $http->postVariable('pdf_string');
+    $label = htmlspecialchars($http->postVariable('pdf_string'), ENT_QUOTES);
     $filename = time() . '_' . rand(1,1000) . '.pdf';
     $stamp = eZSys::varDirectory() . DIRECTORY_SEPARATOR . 'cache/stamp_' . $filename;
 
